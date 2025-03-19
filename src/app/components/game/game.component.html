@@ -1,0 +1,23 @@
+<div class="game-container">
+    <div class="renderer-container" #rendererContainer></div>
+    
+    <div *ngIf="isGameActive && !isGameOver" class="score-display">
+      Score: {{ score }}
+    </div>
+    
+    <div *ngIf="isGameOver" class="game-over">
+      <h2>Game Over!</h2>
+      <p>Your final score: {{ score }}</p>
+      <button class="restart-button" (click)="restartGame()">Play Again</button>
+    </div>
+    
+    <div *ngIf="showStartScreen" class="start-screen">
+      <h1>Temple Run Web</h1>
+      <div class="instructions">
+        <p>Use the arrow keys or A/D keys to move left and right.</p>
+        <p>Use the Spacebar or W key to jump.</p>
+        <p>Avoid obstacles and collect coins to increase your score!</p>
+      </div>
+      <button class="start-button" (click)="startGame()">Start Game</button>
+    </div>
+  </div>
